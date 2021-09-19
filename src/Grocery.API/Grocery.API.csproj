@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.10">
       <PrivateAssets>all</PrivateAssets>
@@ -16,6 +17,21 @@
   <ItemGroup>
     <ProjectReference Include="..\Grocery.Domain\Grocery.Domain.csproj" />
     <ProjectReference Include="..\Grocery.InfraInstructure.Data\Grocery.InfraInstructure.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Category\Command\" />
+    <Folder Include="Application\Category\Handler\" />
+    <Folder Include="Application\Category\Query\" />
+    <Folder Include="Application\Category\Validation\" />
+    <Folder Include="Application\Product\Command\" />
+    <Folder Include="Application\Product\Handler\" />
+    <Folder Include="Application\Product\Query\" />
+    <Folder Include="Application\Product\Validation\" />
+    <Folder Include="Application\Stock\Command\" />
+    <Folder Include="Application\Stock\Handler\" />
+    <Folder Include="Application\Stock\Query\" />
+    <Folder Include="Application\Stock\Validation\" />
   </ItemGroup>
 
 </Project>
