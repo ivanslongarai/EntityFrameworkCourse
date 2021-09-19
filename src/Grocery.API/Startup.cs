@@ -1,4 +1,5 @@
 using Grocery.Infrastructure.Data.DataRegistration;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Reflection;
 
 namespace Grocery.API
 {
@@ -26,6 +28,8 @@ namespace Grocery.API
             services.AddControllers().AddNewtonsoftJson(opt => /* It manages circular references */
               opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            //services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDataRegistration(_configuration);
 
             services.AddSwaggerGen(c =>
@@ -67,7 +71,7 @@ namespace Grocery.API
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Grocery API");
-                //c.RoutePrefix = string.Empty;
+                c.RoutePrefix = string.Empty;
             });
 
             app.UseEndpoints(endpoints =>
