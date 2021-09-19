@@ -45,8 +45,7 @@ namespace Grocery.API.Controllers
 
             return Ok(sucess);
         }
-
-        /*
+        
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -70,6 +69,5 @@ namespace Grocery.API.Controllers
 
             return Ok(sucesso);
         }
-        */
     }
 }

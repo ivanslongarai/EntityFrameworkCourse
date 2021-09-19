@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace Grocery.API.Application.Category.Command
 {
-    public class DeleteCategoryCommand
+    public class DeleteCategoryCommand : IRequest<bool>
     {
+        public int Id { get; set; }
     }
 }
