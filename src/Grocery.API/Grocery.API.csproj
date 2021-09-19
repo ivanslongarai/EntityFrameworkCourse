@@ -23,8 +23,6 @@
 
   <ItemGroup>
     <Folder Include="Application\Product\Command\" />
-    <Folder Include="Application\Product\Handler\" />
-    <Folder Include="Application\Product\Query\" />
     <Folder Include="Application\Product\Validation\" />
     <Folder Include="Application\Stock\Command\" />
     <Folder Include="Application\Stock\Handler\" />

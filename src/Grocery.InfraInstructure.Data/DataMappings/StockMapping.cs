@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Grocery.Infrastructure.Data.DataMappings
 {
-    public class EstoqueMapping : IEntityTypeConfiguration<Stock>
+    public class StockMapping : IEntityTypeConfiguration<Stock>
     {
         public void Configure(EntityTypeBuilder<Stock> builder)
         {

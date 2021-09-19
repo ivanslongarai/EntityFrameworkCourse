@@ -20,12 +20,12 @@ namespace Grocery.API.Application.Category.Handler
             if (!request.Validation.IsValid)
                 return false;
 
-            var categoria = new Domain.Category
+            var category = new Domain.Category
             {
                 Description = request.Description
             };
 
-            await _categoryRepository.AddAsync(categoria, cancellationToken)
+            await _categoryRepository.AddAsync(category, cancellationToken)
                 .ConfigureAwait(false);
 
             return await _categoryRepository.CommitAsync(cancellationToken)

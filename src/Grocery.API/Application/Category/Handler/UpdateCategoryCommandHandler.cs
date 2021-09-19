@@ -4,7 +4,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Grocery.API.Application.Categoria.Handler
+namespace Grocery.API.Application.Category.Handler
 {
     public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommand, bool>
     {
@@ -16,12 +16,12 @@ namespace Grocery.API.Application.Categoria.Handler
         }
         public async Task<bool> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
-            var categoria = await _categoryRepository.GetByKeysAsync(cancellationToken,
+            var category = await _categoryRepository.GetByKeysAsync(cancellationToken,
                 request.Id).ConfigureAwait(false);
 
-            categoria.Description = request.Description;
+            category.Description = request.Description;
 
-            _categoryRepository.Update(categoria);
+            _categoryRepository.Update(category);
             return await _categoryRepository.CommitAsync(cancellationToken).ConfigureAwait(false);
 
         }
