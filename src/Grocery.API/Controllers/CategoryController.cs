@@ -10,7 +10,7 @@ namespace Grocery.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCategories()
         {
-            return Ok("It works!!");
+            return Ok("It works ivan!!");
         }
     }
 }
